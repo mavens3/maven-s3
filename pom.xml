@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.mavens3.wagon.provider</groupId>
+	<artifactId>maven-s3</artifactId>
+	<version>1.0.0</version>
+	<name>maven-s3</name>
+	<description>Simple project for maven s3 wagon provider</description>
+	<properties>
+		<java.version>11</java.version>
+		<aws.version>1.11.993</aws.version>
+		<wagon-provider.version>3.4.3</wagon-provider.version>
+	</properties>
+	<dependencies>
+	<dependency>
+		<groupId>com.amazonaws</groupId>
+		<artifactId>aws-java-sdk-s3</artifactId>
+		<version>${aws.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>com.amazonaws</groupId>
+		<artifactId>aws-java-sdk-sts</artifactId>
+		<version>${aws.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.apache.maven.wagon</groupId>
+		<artifactId>wagon-provider-api</artifactId>
+		<version>${wagon-provider.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.apache.maven.wagon</groupId>
+		<artifactId>wagon-provider-test</artifactId>
+		<version>${wagon-provider.version}</version>
+		<scope>test</scope>
+	</dependency>
+	</dependencies>
+<build>
+<plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+      </plugin>
+    </plugins>
+  </build>
+</project>
